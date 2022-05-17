@@ -5,5 +5,5 @@ option java_package = "com.mike.models";
 
 message Person {
   string name = 1;
-  int32  age =2;
+  int32  age = 2;
 }
