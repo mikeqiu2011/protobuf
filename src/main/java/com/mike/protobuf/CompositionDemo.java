@@ -1,5 +1,6 @@
 package com.mike.protobuf;
 
+import com.google.protobuf.Int32Value;
 import com.mike.models.Address;
 import com.mike.models.Car;
 import com.mike.models.Person;
@@ -30,7 +31,7 @@ public class CompositionDemo {
 
 
         Person sam = Person.newBuilder().setName("sam")
-                .setAge(10)
+                .setAge(Int32Value.newBuilder().setValue(10).build())
                 .setAddress(address)
                 .addAllCar(cars)
                 .build();
