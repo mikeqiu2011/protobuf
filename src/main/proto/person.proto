@@ -28,8 +28,9 @@ message Dealer {
 }
 
 enum BodyStyle {
-  SEDAN = 0;
-  COUPE = 1;
-  SUV = 2;
+  UNKNOWN = 0; // default value if not set
+  SEDAN = 1;
+  COUPE = 2;
+  SUV = 3;
 
 }
