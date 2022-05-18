@@ -12,7 +12,12 @@ public class VersionCompatibilityTest {
         Television television = Television.newBuilder().setBrand("Sony")
                 .setYear(2019).build();
 
-        Path path = Paths.get("tv-v1");
-        Files.write(path, television.toByteArray());
+        Path pathV1 = Paths.get("tv-v1");
+        Files.write(pathV1, television.toByteArray());
+
+        byte[] bytes = Files.readAllBytes(pathV1);
+        System.out.println(
+                Television.parseFrom(bytes)
+        );
     }
 }
