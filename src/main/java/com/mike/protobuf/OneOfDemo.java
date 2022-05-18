@@ -15,9 +15,8 @@ public class OneOfDemo {
                 .build();
 
         Credentials credentials = Credentials.newBuilder()
-                .setEmailMode(emailCredentials)
-//                email get erased
                 .setPhoneMode(phoneOTP)
+                .setEmailMode(emailCredentials)
                 .build();
 
         login(credentials);
@@ -25,8 +24,13 @@ public class OneOfDemo {
     }
 
     private static void login(Credentials credentials) {
-        System.out.println(
-                credentials.getPhoneMode()
-        );
+
+        switch (credentials.getModeCase()) {
+            case EMAILMODE:
+                System.out.println(credentials.getEmailMode());
+            case PHONEMODE:
+                System.out.println(credentials.getPhoneMode());
+        }
+
     }
 }
