@@ -36,14 +36,19 @@ public class PerformanceTest {
             }
         };
 
-        runPerformanceTest(json, "json");
-        runPerformanceTest(proto, "protobuf");
+        for (int i = 0; i < 5; i++) {
+
+            runPerformanceTest(proto, "protobuf");
+            runPerformanceTest(json, "json");
+        }
+
+
     }
 
 
     private static void runPerformanceTest(Runnable runnable, String method) {
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 1_000_000; i++) {
+        for (int i = 0; i < 5_000_000; i++) {
             runnable.run();
         }
         long end = System.currentTimeMillis();
