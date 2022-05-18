@@ -4,6 +4,9 @@ import com.mike.models.Address;
 import com.mike.models.Car;
 import com.mike.models.Person;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CompositionDemo {
     public static void main(String[] args) {
         Address address = Address.newBuilder().setPostbox(123)
@@ -21,11 +24,15 @@ public class CompositionDemo {
                 .setYear(2005)
                 .build();
 
+        List<Car> cars = new ArrayList<>();
+        cars.add(accord);
+        cars.add(civic);
+
+
         Person sam = Person.newBuilder().setName("sam")
                 .setAge(10)
                 .setAddress(address)
-                .addCar(accord)
-                .addCar(civic)
+                .addAllCar(cars)
                 .build();
 
         System.out.println(sam);
