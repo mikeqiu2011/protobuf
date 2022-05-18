@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 
 public class VersionCompatibilityTest {
     public static void main(String[] args) throws IOException {
+        Path pathV1 = Paths.get("tv-v1");
+        Path pathV2 = Paths.get("tv-v2");
 //        Television television = Television.newBuilder().setBrand("Sony")
 //                .setModel(2020)
 //                .setType(Type.OLED)
@@ -17,8 +19,7 @@ public class VersionCompatibilityTest {
 //        Path pathV2 = Paths.get("tv-v2");
 //        Files.write(pathV2, television.toByteArray());
 
-        Path pathV2 = Paths.get("tv-v2");
-        byte[] bytes = Files.readAllBytes(pathV2);
+        byte[] bytes = Files.readAllBytes(pathV1);
         System.out.println(
                 Television.parseFrom(bytes)
         );
