@@ -20,7 +20,7 @@ public class MapDemo {
 
         System.out.println(
 //                dealer.getModelOrThrow(2006)
-                dealer.getModelOrDefault(2006, accord)
+                dealer.getModelOrThrow(2005).getBodyStyle()
         );
     }
 }
