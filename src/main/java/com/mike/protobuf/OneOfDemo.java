@@ -16,6 +16,7 @@ public class OneOfDemo {
 
         Credentials credentials = Credentials.newBuilder()
                 .setEmailMode(emailCredentials)
+//                email get erased
                 .setPhoneMode(phoneOTP)
                 .build();
 
@@ -25,7 +26,7 @@ public class OneOfDemo {
 
     private static void login(Credentials credentials) {
         System.out.println(
-                credentials.getEmailMode()
+                credentials.getPhoneMode()
         );
     }
 }
