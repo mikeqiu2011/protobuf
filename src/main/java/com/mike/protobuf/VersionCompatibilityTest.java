@@ -18,9 +18,9 @@ public class VersionCompatibilityTest {
 //                .build();
 //        Files.write(pathV3, television.toByteArray());
 
-        byte[] bytes = Files.readAllBytes(pathV3);
+        byte[] bytes = Files.readAllBytes(pathV1);
         System.out.println(
-                Television.parseFrom(bytes).getModel()
+                Television.parseFrom(bytes)
         );
     }
 }

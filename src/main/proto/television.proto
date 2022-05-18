@@ -10,17 +10,24 @@ option java_package = "com.mike.models";
 //}
 
 // v2
-message Television {
-  string brand = 1;
-  int32 model = 2;
-  Type type = 3;
-}
+//message Television {
+//  string brand = 1;
+//  int32 model = 2;
+//  Type type = 3;
+//}
 
 // V3, no longer have model field
 //message Television {
 //  string brand = 1;
 //  Type type = 3;
 //}
+
+// v4 after some years, decide to add price field
+message Television {
+  string brand = 1;
+  int32 price = 2;
+  Type type = 3;
+}
 
 enum Type {
   HD = 0;
