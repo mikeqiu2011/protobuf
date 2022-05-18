@@ -25,7 +25,11 @@ option java_package = "com.mike.models";
 // v4 after some years, decide to add price field
 message Television {
   string brand = 1;
-  int32 price = 2;
+
+  reserved 2;
+  reserved "year", "model";
+
+  int32 price = 4;
   Type type = 3;
 }
 
