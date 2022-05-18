@@ -1,6 +1,7 @@
 package com.mike.protobuf;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.Int32Value;
 import com.mike.json.JPerson;
 import com.mike.models.Person;
 
@@ -24,7 +25,13 @@ public class PerformanceTest {
         };
 
         // protobug
-        Person sam = Person.newBuilder().setAge(10).setName("sam").build();
+        Person sam = Person.newBuilder()
+                .setAge(Int32Value.newBuilder().setValue(10).build())
+                .setName("sam").build();
+
+        System.out.println(
+                sam.hasAge()
+        );
 
         Runnable proto = () -> {
             try {

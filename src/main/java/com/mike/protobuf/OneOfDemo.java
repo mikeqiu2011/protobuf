@@ -28,8 +28,10 @@ public class OneOfDemo {
         switch (credentials.getModeCase()) {
             case EMAILMODE:
                 System.out.println(credentials.getEmailMode());
+                break;
             case PHONEMODE:
                 System.out.println(credentials.getPhoneMode());
+                break;
         }
 
     }
