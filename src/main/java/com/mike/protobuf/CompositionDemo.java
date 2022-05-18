@@ -11,15 +11,21 @@ public class CompositionDemo {
                 .setCity("atlanta")
                 .build();
 
-        Car car = Car.newBuilder().setMake("honda")
+        Car accord = Car.newBuilder().setMake("honda")
                 .setModel("accord")
                 .setYear(2020)
+                .build();
+
+        Car civic = Car.newBuilder().setMake("honda")
+                .setModel("Civic")
+                .setYear(2005)
                 .build();
 
         Person sam = Person.newBuilder().setName("sam")
                 .setAge(10)
                 .setAddress(address)
-                .setCar(car)
+                .addCar(accord)
+                .addCar(civic)
                 .build();
 
         System.out.println(sam);
